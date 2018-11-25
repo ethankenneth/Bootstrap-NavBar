@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Nav Bar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+
+
+    <nav class="navbar navbar-inverse"> <!-- navbar-default or navbar-inverse -->
+      <div class="container-fluid">
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar1">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+			    </button>
+
+          <a class="navbar-brand" href="#">My Web Site</a>
+        </div> <!-- End  navbar-header-->
+        <div class="collapse navbar-collapse" id="myNavbar1">
+
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#home">Home</a></li>
+            <li class="dropdown">
+    			       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                   Page 1<span class="caret"></span></a>
+    				           <ul class="dropdown-menu">
+    				                 <li><a href="#">Page 1-1</a></li>
+				                     <li><a href="#">Page 1-2</a></li>
+    				                 <li><a href="#">Page 1-3</a></li>
+    			             </ul> <!-- End dropdown-menu -->
+    		    </li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul> <!-- End  nav navbar-nav-->
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        	<li><a href="#login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul> <!-- End nav navbar-nav navbar-right -->
+      </div> <!-- End collapse navbar-collapse myNavbar1  -->
+      </div> <!-- End container-fluid -->
+    </nav><!-- End class nav navbar-inverse -->
+
+    <section id="home">
+    	<div class="container page">
+    		<div class="jumbotron">
+    		    <h1>Your Application main page</h1>
+    		    <p>Your application information displayed here is the first impression to your users.</p>
+    		</div>
+    	</div>
+    </section>
+    <section id="about" style="display: none">
+    	<div class="container page">
+    		<h1>
+    			About
+    		</h1>
+
+    		<p>Your application description page</p>
+    		<p><small>Use this area to provide additional information</small></p>
+    	</div>
+    </section>
+    <section id="contact" style="display: none">
+	<div class="container page">
+		<h1> Contact</h1>
+
+		<p>Your contact page</p>
+		<address>
+		123 Main <br />
+		Some-town, PA 12332 <br />
+		P. 610.555.3434 <br /><br />
+
+		Support: support@helpme.com
+
+		</address>
+		<p><small>Use this area to provide additional information</small></p>
+	</div>
+</section>
+<section id="signup" style="display: none">
+	<div class="container page">
+		<h1>Sign Up</h1>
+		<p>Your a new account</p>
+		<form>
+		    <div class="form-group">
+		      <label for="username">Email:</label>
+		      <input type="text" class="form-control" id="username">
+		    </div>
+		    <div class="form-group">
+		      <label for="pwd">Password:</label>
+		      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+		    </div>
+		    <div class="form-group">
+		      <label for="pwd">Password:</label>
+		      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+		    </div>
+		    <button type="submit" class="btn btn-default">Sign Up</button>
+		  </form>
+
+	</div>
+</section>
+<section id="login" style="display: none">
+	<div class="container page">
+		<h1>Log in</h1>
+
+		<p>Use your username and password to login</p>
+
+		<form>
+		    <div class="form-group">
+		      <label for="username">username:</label>
+		      <input type="text" class="form-control" id="username">
+		    </div>
+		    <div class="form-group">
+		      <label for="pwd">Password:</label>
+		      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+		    </div>
+		    <div class="checkbox">
+			    <label><input type="checkbox"> Remember me</label>
+			  </div>
+
+		    <button type="submit" class="btn btn-default">Sign Up</button>
+		  </form>
+
+		  <p><a href="#signup">Sign Up</a> if you do not have an account</p>
+
+	</div>
+</section>
+
+
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+    		<span style="color: white;">@copywrite ncc.com - All Rights Reserved</span>
+    </nav><!-- End navbar navbar-inverse navbar-fixed-bottom -->
+
+
+    <script>
+		  $(document).ready(function() {
+		    $('section').eq(0).show();
+		    $('.navbar-nav').on('click', 'a', function() {
+		        $($(this).attr('href')).show().siblings('section:visible').hide();
+		    });
+		  });
+    </script>
+
+  </body>
+</html>
